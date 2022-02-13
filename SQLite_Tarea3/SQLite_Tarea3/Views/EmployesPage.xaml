@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SQLite_Tarea3.Views.EmployesPage"
+             Title="{Binding Title}">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="DsStackLayout" TargetType="StackLayout">
+                <Setter Property="Margin" Value="5,10"/>
+                <Setter Property="VerticalOptions" Value="StartAndExpand"/>
+            </Style>
+
+            <Style x:Key="DsButtonFlotante" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="CornerRadius" Value="50"/>
+                <Setter Property="BorderColor" Value="#01ADBA"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="CornerRadius" Value="40"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HeightRequest" Value="60"/>
+                <Setter Property="WidthRequest" Value="60"/>
+            </Style>
+            <Style x:Key="entryFormStyle" TargetType="Entry">
+                <Setter Property="Margin" Value="10,0"/>
+                <Setter Property="FontFamily" Value="SansLight"/>
+                <Setter Property="FontSize" Value="18"/>
+
+
+                <Setter Property="PlaceholderColor" Value="Gray"/>
+                <Setter Property="TextColor" Value="#423F3E"/>
+            </Style>
+
+            <Style x:Key="frameStyle" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="Padding" Value="3"/>
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="CornerRadius" Value="5"/>
+                <Setter Property="VerticalOptions" Value="StartAndExpand"/>
+                <Setter Property="BorderColor" Value="#E7E4E3"/>
+                <Setter Property="Margin" Value="20,5"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Text="Guardar"
+            Command="{Binding SaveCommand}"
+            />
+
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+
+        <ScrollView>
+            <StackLayout Style="{StaticResource DsStackLayout}">
+                <Image Source="user2.png" HorizontalOptions="Center"/>
+                <Frame Style="{StaticResource frameStyle}">
+                    <Entry Style="{StaticResource entryFormStyle}"
+                        Keyboard="Plain"
+                        Placeholder="Nombre"
+                        Text="{Binding Nombre, Mode=TwoWay}"
+                               />
+                </Frame>
+                <Frame Style="{StaticResource frameStyle}">
+
+                    <Entry Style="{StaticResource entryFormStyle}"
+                        Keyboard="Plain"
+                        Placeholder="Apellido"
+                        Text="{Binding Apellido, Mode=TwoWay}"/>
+                </Frame>
+
+                <Frame Style="{StaticResource frameStyle}">
+                    <Entry Style="{StaticResource entryFormStyle}"
+                         Placeholder="Edad"
+                        Keyboard="Numeric"
+                        Text="{Binding Edad, Mode=TwoWay}"/>
+                </Frame>
+
+                <Frame Style="{StaticResource frameStyle}">
+
+                    <Entry Style="{StaticResource entryFormStyle}"
+                        Keyboard="Plain"
+                        Placeholder="Correo Electronico"
+                        Text="{Binding Correo, Mode=TwoWay}"/>
+
+                </Frame>
+
+                <Frame Style="{StaticResource frameStyle}">
+
+                    <Entry Style="{StaticResource entryFormStyle}"
+                        Keyboard="Plain"
+                        Placeholder="Dirección"
+                        Text="{Binding Direccion, Mode=TwoWay}"/>
+
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+
+</ContentPage>
